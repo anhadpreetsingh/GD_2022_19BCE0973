@@ -11,7 +11,7 @@ public class PulpitManager : MonoBehaviour
 
     void Start()
     {
-        x = jsonManager.rootObject.pulpit_data.pulpit_spawn_time;
+        x = jsonManager.rootObject.pulpit_data.pulpit_spawn_time-1;
         GameObject firstPulpit = Instantiate(pulpit, new Vector3(0, 0, 0), Quaternion.identity);
         currentPulpit = firstPulpit.GetComponent<PulpitBehaviour>();
     }
