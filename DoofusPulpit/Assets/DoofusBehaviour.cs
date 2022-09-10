@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DoofusBehaviour : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class DoofusBehaviour : MonoBehaviour
         float Ymov = -Yval*speed*Time.deltaTime;
 
         transform.position = new Vector3(transform.position.x + Ymov, transform.position.y, transform.position.z + Xmov);
+
+        if(transform.position.y <= 0.4)
+            SceneManager.LoadScene(2);
     }
 
     public void IncrementScore()
