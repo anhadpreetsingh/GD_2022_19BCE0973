@@ -361,7 +361,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -439,12 +439,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.38327122, y: 0.61455333, z: -0.45379278, w: -0.5191334}
-  m_LocalPosition: {x: 5.551706, y: 18.382895, z: 0.72965634}
+  m_LocalRotation: {x: -0.46170834, y: 0.5357289, z: -0.46313456, w: -0.5341595}
+  m_LocalPosition: {x: 2.400171, y: 16.99817, z: 0.15840371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2043525995}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1525051640
@@ -509,6 +509,58 @@ Transform:
   m_GameObject: {fileID: 1525051640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1528670171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1528670173}
+  - component: {fileID: 1528670172}
+  m_Layer: 0
+  m_Name: JsonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1528670172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528670171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16ff7db7af3d424a8a5c77766462bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textJSON: {fileID: 4900000, guid: 15879838d843ae24a8c0d4a391dc3682, type: 3}
+  rootObject:
+    player_data:
+      speed: 0
+    pulpit_data:
+      min_pulpit_destroy_time: 0
+      max_pulpit_destroy_time: 0
+      pulpit_spawn_time: 0
+--- !u!4 &1528670173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528670171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.71011543, y: 5.3205385, z: 0.1643871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,9 +662,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2043525996
 MonoBehaviour:
@@ -626,9 +679,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174a348cd0a68d74ea2e53d0b15ffd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 2
   score: 0
   textMesh: {fileID: 412229693}
+  jsonManager: {fileID: 1528670172}
 --- !u!54 &2043525997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -674,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa6a47f087880e4abee01c10a46cc04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonManager: {fileID: 1528670172}
   pulpit: {fileID: 6273997039625653934, guid: 911aac742352c4a4b91e0fc48a1951e0, type: 3}
   currentPulpit: {fileID: 114254146}
   x: 2
@@ -690,7 +745,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090216600
 GameObject:
@@ -786,7 +841,7 @@ RectTransform:
   m_Children:
   - {fileID: 412229692}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -808,9 +863,13 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pulpit
       objectReference: {fileID: 0}
+    - target: {fileID: 6273997039625653969, guid: 911aac742352c4a4b91e0fc48a1951e0, type: 3}
+      propertyPath: jsonManager
+      value: 
+      objectReference: {fileID: 1528670172}
     - target: {fileID: 6273997039625653970, guid: 911aac742352c4a4b91e0fc48a1951e0, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6273997039625653970, guid: 911aac742352c4a4b91e0fc48a1951e0, type: 3}
       propertyPath: m_LocalScale.x

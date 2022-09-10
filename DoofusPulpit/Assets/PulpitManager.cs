@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PulpitManager : MonoBehaviour
 {
+    [SerializeField] JsonManager jsonManager;
     [SerializeField] GameObject pulpit;
     [SerializeField] PulpitBehaviour currentPulpit;
     [SerializeField] float x = 2f;
 
-
+    void Start()
+    {
+        x = jsonManager.rootObject.pulpit_data.pulpit_spawn_time;
+    }
     // Update is called once per frame
     void Update()
     {

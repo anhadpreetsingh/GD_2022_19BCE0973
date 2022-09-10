@@ -9,10 +9,11 @@ public class DoofusBehaviour : MonoBehaviour
     [SerializeField] float speed = 2f;
     [SerializeField] float score = 0f;
     [SerializeField] TextMeshProUGUI textMesh;
+    [SerializeField] JsonManager jsonManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = jsonManager.rootObject.player_data.speed;
     }
 
     // Update is called once per frame

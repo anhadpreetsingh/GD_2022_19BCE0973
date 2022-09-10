@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class PulpitBehaviour : MonoBehaviour
 {
-    
+    JsonManager jsonManager;
+    public float timermin = 5f;
+    public float timermax = 7f;
     public float timer = 5f;
     public bool scored = false;
     DoofusBehaviour db;
@@ -15,6 +17,12 @@ public class PulpitBehaviour : MonoBehaviour
 
     void Start()
     {
+        GameObject jsonManagerObject = GameObject.Find("JsonManager");
+        jsonManager = jsonManagerObject.GetComponent<JsonManager>();
+        timermin = jsonManager.rootObject.pulpit_data.min_pulpit_destroy_time;
+        timermax = jsonManager.rootObject.pulpit_data.max_pulpit_destroy_time;
+
+        timer = Random.Range(timermin, timermax-0.1f);
         GameObject dbObject = GameObject.Find("Doofus");
         db = dbObject.GetComponent<DoofusBehaviour>();
     }
