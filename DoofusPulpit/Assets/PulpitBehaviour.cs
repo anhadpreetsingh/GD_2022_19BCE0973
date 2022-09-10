@@ -22,7 +22,7 @@ public class PulpitBehaviour : MonoBehaviour
         timermin = jsonManager.rootObject.pulpit_data.min_pulpit_destroy_time;
         timermax = jsonManager.rootObject.pulpit_data.max_pulpit_destroy_time;
 
-        timer = Random.Range(timermin, timermax-0.1f);
+        timer = Random.Range(timermin, timermax);
         GameObject dbObject = GameObject.Find("Doofus");
         db = dbObject.GetComponent<DoofusBehaviour>();
     }

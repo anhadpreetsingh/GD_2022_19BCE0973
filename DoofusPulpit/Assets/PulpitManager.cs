@@ -6,12 +6,14 @@ public class PulpitManager : MonoBehaviour
 {
     [SerializeField] JsonManager jsonManager;
     [SerializeField] GameObject pulpit;
-    [SerializeField] PulpitBehaviour currentPulpit;
+    PulpitBehaviour currentPulpit;
     [SerializeField] float x = 2f;
 
     void Start()
     {
         x = jsonManager.rootObject.pulpit_data.pulpit_spawn_time;
+        GameObject firstPulpit = Instantiate(pulpit, new Vector3(0, 0, 0), Quaternion.identity);
+        currentPulpit = firstPulpit.GetComponent<PulpitBehaviour>();
     }
     // Update is called once per frame
     void Update()

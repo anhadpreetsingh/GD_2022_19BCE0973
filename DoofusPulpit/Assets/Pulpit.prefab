@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6273997039625653969}
   m_Layer: 0
   m_Name: Pulpit
-  m_TagString: Untagged
+  m_TagString: Pulpit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,4 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b18a25158f98e478dcf95fbdf9b893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timermin: 5
+  timermax: 7
   timer: 5
+  scored: 0
